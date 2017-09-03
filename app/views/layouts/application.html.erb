@@ -32,17 +32,48 @@
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse navbar-def" id="bs-example-navbar-collapse-1">
-                    
-                      <ul class="nav navbar-nav navbar-right">
-                        <li>
-                      <a href="#wrapper"><i class="fa fa-home"></i> Home</a>
-                    </li>
-                    <li>
-                      <a href="#about"><i class="fa fa-bookmark"></i> About</a>
-                    </li>
-                      </ul>
-                  </div><!-- /navbar-collapse -->
+                  <% if user_signed_in? %>
+                    <div class="collapse navbar-collapse navbar-def" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                          <li>
+                            <a href="/"><i class="fa fa-home"></i> Home</a>
+                          </li>
+                          <li>
+                            <%= link_to spots_path, method: :get do %>
+                              <i class="fa fa-map-pin"></i> 撮影スポット
+                            <% end %>
+                          </li>
+                          <li>
+                            <%= link_to new_user_session_path, method: :delete do %>
+                              <i class="fa fa-sign-out"></i> ログアウト
+                            <% end %>
+                          </li>
+                        </ul>
+                    </div><!-- /navbar-collapse -->
+                  <% else %>
+                    <div class="collapse navbar-collapse navbar-def" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                          <li>
+                            <a href="/"><i class="fa fa-home"></i> Home</a>
+                          </li>
+                          <li>
+                            <%= link_to spots_path, method: :get  do %>
+                              <i class="fa fa-map-pin"></i> 撮影スポット
+                            <% end %>
+                          </li>
+                          <li>
+                            <%= link_to new_user_session_path, method: :get do %>
+                              <i class="fa fa-sign-in"></i> ログイン
+                            <% end %>
+                          </li>
+                          <li>
+                            <%= link_to new_user_registration_path, method: :get do %>
+                              <i class="fa fa-user-plus"></i> 新規登録
+                            <% end %>
+                          </li>
+                        </ul>
+                    </div><!-- /navbar-collapse -->
+                  <% end %>
                 </div><!-- / .container-fluid -->
             </nav>
           </div>
