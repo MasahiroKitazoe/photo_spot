@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 
+gem 'mechanize'
+
 group :development, :test do
   gem 'byebug'
   gem 'mysql2', '0.3.18'
