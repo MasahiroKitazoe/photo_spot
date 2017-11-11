@@ -1,0 +1,4 @@
+class ScrapingAutumnSpot
+
+
+end

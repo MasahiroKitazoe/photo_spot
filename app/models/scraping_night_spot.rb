@@ -57,5 +57,23 @@ class ScrapingNightSpot
     lat = latlng_arr[1]
     lng.slice!('緯度：')
     lat.slice!('経度：')
+
+    # スクレイピングしたデータの保存
+    if Spot.where(name: spot_name).exists? then
+      spot = Spot.where(name: spot_name).first_or_initialize
+      create_rows(spot, spot_name, prefecture, city, lng, lat)
+    else
+      spot = Spot.new
+      create_rows(spot, spot_name, prefecture, city, lng, lat)
+    end
+  end
+
+  def self.create_rows(spot, spot_name, prefecture, city, lng, lat)
+    spot.name = spot_name
+    spot.prefecture = prefecture
+    spot.city = city
+    spot.longitude = lng
+    spot.latitude = lat
+    spot.save
   end
 end
