@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129233820) do
+ActiveRecord::Schema.define(version: 20171205055325) do
 
   create_table "prefectures", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -29,14 +29,15 @@ ActiveRecord::Schema.define(version: 20171129233820) do
   end
 
   create_table "spots", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.integer  "user_id",    limit: 4
-    t.string   "prefecture", limit: 255
-    t.string   "city",       limit: 255
+    t.string   "name",          limit: 255
+    t.integer  "user_id",       limit: 4
+    t.string   "prefecture",    limit: 255
+    t.string   "city",          limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "longitude",              precision: 8, scale: 6
-    t.decimal  "latitude",               precision: 9, scale: 6
+    t.decimal  "longitude",                 precision: 8, scale: 6
+    t.decimal  "latitude",                  precision: 9, scale: 6
+    t.integer  "prefecture_id", limit: 4
   end
 
   create_table "users", force: :cascade do |t|
