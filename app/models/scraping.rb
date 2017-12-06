@@ -34,8 +34,9 @@ class Scraping
 
     #都道府県名の格納
     element = page.at('#mainCntInner h1')
-    prefecture = element.inner_text
-    prefecture.slice!('の写真撮影スポット')
+    tmp_prefec = element.inner_text
+    tmp_prefec.slice!('の写真撮影スポット')
+    prefecture = Prefecture.where(name: tmp_prefec)
 
     elements = page.search('.spotList li')
     elements.each do |ele|
