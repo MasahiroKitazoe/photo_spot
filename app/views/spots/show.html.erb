@@ -1,0 +1,44 @@
+<div class="content-block" id="blog">
+  <div class="container blog-sec">
+    <header class="block-heading cleafix">
+      <a href="/reviews" class="btn btn-o btn-lg pull-right">View All</a>
+      <div class="title-page">
+        <p class="main-header"><%= @spot.name %></p>
+          <p class="sub-header">レビュー平均点：xx</p>
+      </div>
+    </header>
+    <section class="block-body">
+      <div class="row">
+        <div class="col-sm-4 blog-post">
+          <img src="images/bike_water1-1000x600.jpg">
+          <a href="#"><h2>Design Your Mind</h2></a>
+          <div class="date">3 Nov, 2014</div>
+          <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
+          <a href="">Read More</a>
+        </div>
+        <div class="col-sm-4 blog-post">
+          <img src="assets/images/mac_glasses1-1000x600.jpg">
+          <a href="#"><h2>Winter Is Comming</h2></a>
+          <div class="date">3 Nov, 2014</div>
+          <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
+          <a href="">Read More</a>
+        </div>
+        <div class="col-sm-4 blog-post">
+          <img src="assets/images/road-1000x600.jpg">
+          <a href="#"><h2>The Illustration</h2></a>
+          <div class="date">3 Nov, 2014</div>
+          <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
+          <a href="">Read More</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div><!-- #blog -->
+
+
+<div class="content-block parallax" id="parallax">
+  <div class="container">
+    <h3 class="call-action pull-left">「<%= @spot.name %>」に対する、あなたの評価を登録しませんか？</h3>
+    <%= link_to '評価を登録', new_review_path(@spot), class: "pull-right btn btn-o-white btn-lg" %>
+  </div>
+</div><!-- #parallax -->

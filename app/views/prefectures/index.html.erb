@@ -1,0 +1,45 @@
+<div id="header" class="content-block">
+  <!-- <section class="top clearfix">
+    <div class="pull-left">
+      <h1><a class="logo" href="index.html">Nevada <span class="logo-head">Plus</span></a></h1>
+    </div>
+    <! <div class="pull-right">
+      <a class="toggleDrawer" href="#"><i class="fa fa-bars fa-2x"></i></a>
+    </div>
+  </section>-->
+  <section class="center">
+    <div class="slogan">
+      撮影スポットを探す
+    </div></br>
+    <div class="input-group" style="width: 60%; margin: auto;">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </section>
+</div><!-- header -->
+
+
+<div class="content-block" id="blog">
+        <div class="container blog-sec">
+          <header class="block-heading cleafix">
+            <div class="title-page">
+              <p class="main-header">都道府県から探す</p>
+                <p class="sub-header">Search by prefecture</p>
+            </div>
+          </header>
+          <section class="block-body">
+            <div class="row">
+              <% @prefectures.each do |prefec| %>
+              <div class="col-sm-4 blog-post">
+                <img src="/images/prefecture<%= prefec.id %>.jpg">
+                <h2><%= prefec.name %></h2>
+                <p>In at accumsan risus.</p>
+                <p><a class="btn btn-primary btn-lg" href="/prefectures/<%= prefec.id %>" role="button"><%= prefec.name %>のフォトスポットを見る</a></p>
+              </div>
+              <% end %>
+            </div>
+          </section>
+        </div>
+      </div><!-- #blog -->

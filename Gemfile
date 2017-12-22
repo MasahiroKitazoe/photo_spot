@@ -36,6 +36,8 @@ gem 'devise'
 
 gem 'mechanize'
 
+gem 'pry-rails'
+
 group :development, :test do
   gem 'byebug'
   gem 'mysql2', '0.3.18'

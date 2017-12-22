@@ -1,0 +1,22 @@
+<div class="content-block" id="blog">
+  <div class="container blog-sec">
+    <header class="block-heading cleafix">
+      <div class="title-page">
+        <p class="main-header"><%= @prefecture.name %></p>
+          <p class="sub-header">スポット一覧</p>
+      </div>
+    </header>
+    <section class="block-body">
+      <div class="row">
+        <% @prefecture.spots.each do |spot| %>
+          <div class="col-sm-4 blog-post">
+            <img src="/images/">
+            <h2><%= spot.name %></h2>
+            <p>In at accumsan risus.</p>
+            <p><a class="btn btn-primary btn-lg" href="/spots/<%= spot.id %>" role="button">詳細を見る</a></p>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </div>
+</div><!-- #blog -->
