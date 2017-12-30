@@ -1,1 +1,18 @@
-<h1><%= @review.spot.name %></h1>
+<div class="jumbotron">
+  <h1 style="text-align: center;"><%= @review.spot.name %>をレビューする</h1>
+</div>
+
+<div class="jumbotron" style="text-align: center;">
+  <%= form_for @review do |f| %>
+    <h4>
+      <%= f.label :このスポットを5段階で評価すると、何点になりますか？ %><br>
+      <%= f.number_field :rate, value: 1, max: 5, min: 1 %>
+    </h4>
+    <h4>
+      <%= f.label :よろしければ、評価の理由を教えてください %><br>
+      <%= f.text_area :comment, :size=> "60x10" %><br><br>
+    </h4>
+    <% f.hidden_field :spot_id, value: @review.spot.id %>
+    <%= f.submit "レビューを投稿する", :class => 'btn btn-primary btn-lg' %>
+  <% end %>
+</div>
