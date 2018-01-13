@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-   before_action :authenticate_user!, only: :new
+   before_action :authenticate, only: :new
 
   def index
   end
@@ -23,5 +23,9 @@ class ReviewsController < ApplicationController
         :rate,
         :comment
         ).merge(spot_id: session[:spot_id])
+    end
+
+    def authenticate
+      redirect_to static_pages_demand_sign_in_url unless user_signed_in?
     end
 end

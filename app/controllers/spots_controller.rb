@@ -1,4 +1,4 @@
-class SpotsController < ApplicationController
+class SpotsController < LayoutsController
   def index
     @spots = Spot.all
     @prefectures = Prefecture.all
