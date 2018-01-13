@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1 style="text-align: center;"><%= @review.spot.name %>をレビューする</h1>
+  <h2 style="text-align: center;"><%= @review.spot.name %>について、あなたの評価をお聞かせください</h2>
 </div>
 
 <div class="jumbotron" style="text-align: center;">
@@ -12,7 +12,7 @@
       <%= f.label :よろしければ、評価の理由を教えてください %><br>
       <%= f.text_area :comment, :size=> "60x10" %><br><br>
     </h4>
-    <% f.hidden_field :spot_id, value: @review.spot.id %>
+    <% session[:spot_id] = @review.spot.id %>
     <%= f.submit "レビューを投稿する", :class => 'btn btn-primary btn-lg' %>
   <% end %>
 </div>
