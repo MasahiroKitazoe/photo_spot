@@ -13,4 +13,6 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+# SASS
+*= require devise_bootstrap_views
  */

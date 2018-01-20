@@ -38,6 +38,8 @@ gem 'mechanize'
 
 gem 'pry-rails'
 
+gem 'devise-bootstrap-views'
+
 group :development, :test do
   gem 'byebug'
   gem 'mysql2', '0.3.18'
