@@ -40,6 +40,8 @@ gem 'pry-rails'
 
 gem 'devise-bootstrap-views'
 
+gem 'ransack'
+
 group :development, :test do
   gem 'byebug'
   gem 'mysql2', '0.3.18'

@@ -15,8 +15,17 @@
     </div>
     <div class="secondary-slogan">
       Find great photo spots
-    </div>
-    <!-- ここに撮影スポットの検索窓を設置する予定 -->
+    </div></br></br>
+    <%= search_form_for(@q, method: :get, :url => {:controller => :spots, :action => :search}) do |f| %>
+      <%= f.label :都道府県で絞る： %>
+      <%= f.select :prefecture_cont, @prefectures.map{|prefec| prefec.name}, id: "prefec", value: "都道府県を選択" %>
+      <div class="input-group" style="width: 60%; margin: auto;">
+        <%= f.search_field :name_cont, class: "form-control", placeholder: "撮影スポットを検索" %>
+        <span class="input-group-btn">
+          <%= f.submit '検索', class: "btn btn-primary" %>
+        </span>
+      </div><!-- /input-group -->
+    <% end %>
   </section>
 </div><!-- header -->
 
