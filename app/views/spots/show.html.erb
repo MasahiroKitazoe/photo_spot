@@ -4,7 +4,17 @@
       <a href="/reviews" class="btn btn-o btn-lg pull-right">View All</a>
       <div class="title-page">
         <p class="main-header"><%= @spot.name %></p>
-          <p class="sub-header">レビュー平均点：xx</p>
+        <% if @spot.reviews.present? %>
+          <p class="sub-header">
+            レビュー平均点：<%= @average %>点&nbsp;&nbsp;
+            <div class="star-rating">
+            <div class="star-rating-front" style="width: <%= @rate %>%">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div>
+        </div>
+          </p>
+        <% else %>
+          <p class="sub-header">レビュー平均点：まだレビューは投稿されていません</p>
+        <% end %>
       </div>
     </header>
     <section class="block-body">

@@ -1,7 +1,6 @@
 
 // css for devise forms
 
-
 .devise-title{
   text-align: center;
   margin-top: 2em;
@@ -11,3 +10,24 @@
   text-align: center;
 }
 
+
+
+// css for star rating
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+.star-rating-back {
+  color: #ccc;
+}

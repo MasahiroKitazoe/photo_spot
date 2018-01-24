@@ -6,6 +6,9 @@ class SpotsController < LayoutsController
 
   def show
     @spot = Spot.find(params[:id])
+    @reviews = Review.where(spot_id: params[:id])
+    @average = @reviews.average(:rate)
+    @rate = ((@average / 5) * 100).round
   end
 
   def search
