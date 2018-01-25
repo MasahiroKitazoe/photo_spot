@@ -8,9 +8,9 @@
           <p class="sub-header">
             レビュー平均点：<%= @average %>点&nbsp;&nbsp;
             <div class="star-rating">
-            <div class="star-rating-front" style="width: <%= @rate %>%">★★★★★</div>
-            <div class="star-rating-back">★★★★★</div>
-        </div>
+              <div class="star-rating-front" style="width: <%= @rate %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
           </p>
         <% else %>
           <p class="sub-header">レビュー平均点：まだレビューは投稿されていません</p>
@@ -19,27 +19,17 @@
     </header>
     <section class="block-body">
       <div class="row">
-        <div class="col-sm-4 blog-post">
-          <img src="images/bike_water1-1000x600.jpg">
-          <a href="#"><h2>Design Your Mind</h2></a>
-          <div class="date">3 Nov, 2014</div>
-          <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-          <a href="">Read More</a>
-        </div>
-        <div class="col-sm-4 blog-post">
-          <img src="assets/images/mac_glasses1-1000x600.jpg">
-          <a href="#"><h2>Winter Is Comming</h2></a>
-          <div class="date">3 Nov, 2014</div>
-          <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-          <a href="">Read More</a>
-        </div>
-        <div class="col-sm-4 blog-post">
-          <img src="assets/images/road-1000x600.jpg">
-          <a href="#"><h2>The Illustration</h2></a>
-          <div class="date">3 Nov, 2014</div>
-          <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-          <a href="">Read More</a>
-        </div>
+        <% @reviews.first(3).each do |review| %>
+          <div class="col-sm-4 blog-post">
+            <h2><%= review.user.id %></h2>
+            <div class="star-rating-sm">
+              <div class="star-rating-front" style="width: <%= ((review.rate.to_f/5)*100).to_i %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+            <p><%= review.comment.truncate(30, omission: '...') %></p>
+            <a href="reviews/<%= review.id %>">Read More</a>
+          </div>
+        <% end %>
       </div>
     </section>
   </div>
